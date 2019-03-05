@@ -1,0 +1,84 @@
+/****************************************************
+*Daily assignment1-10
+*Created by Gavin Zhou
+*Created on 2019-03-02
+*This program is about the place of planests
+*Innput the name of planet, program will give user the place of planet
+*****************************************************/
+
+import java.util.Scanner;
+
+class planets {
+	
+	public static void main(String[] args) {
+		// definition of userChoice
+		Planets userChoice;
+		
+		for(Planets planetName : Planets.values()) {
+			System.out.println(planetName);
+		}
+		// let user know what this program most about
+		System.out.println("\nEnter a planet in our solar system ");
+		// take the input
+		Scanner scanner = new Scanner(System.in);
+		String user = scanner.nextLine();
+		// take the user choice 
+		userChoice = Planets.valueOf(user.toUpperCase());
+		// the imfro of planets and outprint
+		switch(userChoice) {
+		
+		case MERCURY :
+			System.out.println("You choosed " + Planets.MERCURY + " and the position is " + Planets.MERCURY.position + "st");
+			break;
+			
+		case VENUS :
+			System.out.println("You choosed " + Planets.VENUS + " and the position is " + Planets.VENUS.position + "nd");
+			break;
+		
+		case EARTH :
+			System.out.println("You choosed " + Planets.EARTH + " and the position is " + Planets.EARTH.position + "rd");
+			break;
+			
+		case MARS :
+			System.out.println("You choosed " + Planets.MARS + " and the position is " + Planets.MARS.position + "th");
+			break;
+		
+		case JUPITER :
+			System.out.println("You choosed " + Planets.JUPITER + " and the position is " + Planets.JUPITER.position + "th");
+			break;	
+		
+		case SATURN :
+			System.out.println("You choosed " + Planets.SATURN + " and the position is " + Planets.SATURN.position + "th");
+			break; 
+			
+		case URANUS :
+			System.out.println("You choosed " + Planets.URANUS + " and the position is " + Planets.URANUS.position + "th");
+			break;
+			
+		case NEPTUNE :
+			System.out.println("You choosed " + Planets.NEPTUNE + " and the position is " + Planets.NEPTUNE.position + "th");
+			break;
+			
+		}
+		
+	}
+	// use enumeration statement, list the place of planets
+	public enum Planets{
+		MERCURY(1),
+		VENUS(2),
+		EARTH(3),
+		MARS(4),
+		JUPITER(5),
+		SATURN(6),
+		URANUS(7),
+		NEPTUNE(8);
+		// definition of position
+		private final int position;
+		
+		private Planets(int position) {
+			this.position = position;
+		}
+		
+	}
+
+}
